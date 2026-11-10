@@ -1,0 +1,81 @@
+/* Token desain dari docs/DESAIN.md bagian 4 (diturunkan dari mockup). */
+:root {
+  --bg: #F6F5FC;
+  --surface: #FFFFFF;
+  --surface-soft: #F1EFFB;
+  --border: #E6E4F2;
+  --text: #1F2140;
+  --text-muted: #6B6E85;
+  --primary: #6C5CE7;
+  --primary-soft: #EEEBFF;
+  --on-primary: #FFFFFF;
+  --genap: var(--primary);
+  --genap-soft: var(--primary-soft);
+  --ganjil: #4C7CF0;
+  --ganjil-soft: #E6EEFF;
+  --benar: #2FB673;
+  --benar-soft: #E3F6EC;
+  --salah: #E5675C;
+  --salah-soft: #FDECEA;
+
+  --ikon-biru-bg: #E6EEFF;   --ikon-biru: #4C7CF0;
+  --ikon-hijau-bg: #E3F6EC;  --ikon-hijau: #2FB673;
+  --ikon-kuning-bg: #FFF3DC; --ikon-kuning: #F5A524;
+  --ikon-ungu-bg: #EFE9FF;   --ikon-ungu: #7B61FF;
+
+  --bayangan: 0 4px 16px rgba(108, 92, 231, 0.08);
+  --radius-kartu: 16px;
+  --radius-ikon: 14px;
+  --skala: 1;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema="terang"]) {
+    --bg: #16152B;
+    --surface: #22213B;
+    --surface-soft: #2B2A47;
+    --border: #38365A;
+    --text: #ECEBF7;
+    --text-muted: #A6A5C2;
+    --primary: #8F82F0;
+    --primary-soft: #332F5C;
+    --on-primary: #16152B;
+    --ganjil: #7FA2F5;
+    --ganjil-soft: #25335A;
+    --benar: #5ED39A;
+    --benar-soft: #1F3B30;
+    --salah: #F08C83;
+    --salah-soft: #4A2B2E;
+    --ikon-biru-bg: #25335A;   --ikon-biru: #7FA2F5;
+    --ikon-hijau-bg: #1F3B30;  --ikon-hijau: #5ED39A;
+    --ikon-kuning-bg: #3F3420; --ikon-kuning: #F7BE5A;
+    --ikon-ungu-bg: #332F5C;   --ikon-ungu: #A493FF;
+    --bayangan: 0 4px 16px rgba(0, 0, 0, 0.25);
+    color-scheme: dark;
+  }
+}
+
+:root[data-tema="gelap"] {
+  --bg: #16152B;
+  --surface: #22213B;
+  --surface-soft: #2B2A47;
+  --border: #38365A;
+  --text: #ECEBF7;
+  --text-muted: #A6A5C2;
+  --primary: #8F82F0;
+  --primary-soft: #332F5C;
+  --on-primary: #16152B;
+  --ganjil: #7FA2F5;
+  --ganjil-soft: #25335A;
+  --benar: #5ED39A;
+  --benar-soft: #1F3B30;
+  --salah: #F08C83;
+  --salah-soft: #4A2B2E;
+  --ikon-biru-bg: #25335A;   --ikon-biru: #7FA2F5;
+  --ikon-hijau-bg: #1F3B30;  --ikon-hijau: #5ED39A;
+  --ikon-kuning-bg: #3F3420; --ikon-kuning: #F7BE5A;
+  --ikon-ungu-bg: #332F5C;   --ikon-ungu: #A493FF;
+  --bayangan: 0 4px 16px rgba(0, 0, 0, 0.25);
+  color-scheme: dark;
+}

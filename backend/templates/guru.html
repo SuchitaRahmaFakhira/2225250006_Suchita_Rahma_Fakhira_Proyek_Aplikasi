@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <title>Rekap Nilai · PolaKu</title>
+  {% include "_gaya.html" %}
+  <style>
+    .kepala { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+    .gulir { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 720px; }
+    th, td { padding: 12px 10px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { color: var(--text-muted); font-weight: 600; font-size: 13px; background: var(--surface-soft); }
+    td.angka, th.angka { text-align: right; font-variant-numeric: tabular-nums; }
+    .kosong { text-align: center; color: var(--text-muted); padding: 32px; }
+    .aksi { display: flex; gap: 8px; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <main class="wadah">
+    <div class="kepala">
+      <div>
+        <h1>Rekap Nilai Siswa PolaKu</h1>
+        <div class="muted">{{ rekap|length }} siswa · diperbarui {{ dibuat }}</div>
+      </div>
+      <div class="aksi">
+        <a class="tombol" href="{{ url_for('guru.rekap_csv') }}">Unduh CSV</a>
+        <a class="tombol kedua" href="{{ url_for('guru.keluar') }}">Keluar</a>
+      </div>
+    </div>
+
+    <div class="kartu gulir">
+      <table>
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th class="angka">Pre-test</th>
+            <th class="angka">Post-test</th>
+            <th class="angka">Rata latihan (%)</th>
+            <th class="angka">Jml latihan</th>
+            <th class="angka">Petunjuk / latihan</th>
+            <th class="angka">Angket (1–9)</th>
+            <th class="angka">Modul selesai</th>
+            <th>Aktivitas terakhir</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for r in rekap %}
+          <tr>
+            <td>{{ r.nama }} <span class="muted">#{{ r.id_pendek }}</span></td>
+            <td class="angka">{{ r.pretest if r.pretest is not none else '–' }}</td>
+            <td class="angka">{{ r.posttest if r.posttest is not none else '–' }}</td>
+            <td class="angka">{{ r.rata_latihan if r.rata_latihan is not none else '–' }}</td>
+            <td class="angka">{{ r.jumlah_latihan }}</td>
+            <td class="angka">{{ r.rata_petunjuk if r.rata_petunjuk is not none else '–' }}</td>
+            <td class="angka">{{ r.rata_angket if r.rata_angket is not none else '–' }}</td>
+            <td class="angka">{{ r.modul_selesai }} / 4</td>
+            <td>{{ r.terakhir }}</td>
+          </tr>
+          {% else %}
+          <tr><td colspan="9" class="kosong">Belum ada siswa yang memakai aplikasi.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <p class="muted">Kode #… membedakan siswa yang nama panggilannya sama. Pre-test dan post-test memakai nilai percobaan pertama (0–100). Angket: semakin kecil berarti beban kognitif yang dirasakan semakin ringan.</p>
+  </main>
+</body>
+</html>

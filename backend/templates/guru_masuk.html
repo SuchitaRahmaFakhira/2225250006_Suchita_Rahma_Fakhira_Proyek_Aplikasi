@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <title>Masuk Guru · PolaKu</title>
+  {% include "_gaya.html" %}
+</head>
+<body>
+  <main class="wadah" style="max-width: 420px; padding-top: 48px;">
+    <div class="kartu">
+      <h1>Rekap Guru PolaKu</h1>
+      {% if kunci_diatur %}
+      <p class="muted">Masukkan kunci guru untuk melihat nilai siswa.</p>
+      <form method="post" action="{{ url_for('guru.masuk') }}">
+        <label for="kunci">Kunci guru</label>
+        <input id="kunci" name="kunci" type="password" required autofocus>
+        {% if galat %}<div class="galat" role="alert">{{ galat }}</div>{% endif %}
+        <button class="tombol" type="submit" style="width: 100%; margin-top: 20px;">Masuk</button>
+      </form>
+      {% else %}
+      <div class="galat" role="alert">
+        Kunci guru belum diatur di server. Isi <code>KUNCI_GURU</code> di file <code>backend/.env</code>,
+        lalu jalankan ulang server.
+      </div>
+      {% endif %}
+    </div>
+  </main>
+</body>
+</html>

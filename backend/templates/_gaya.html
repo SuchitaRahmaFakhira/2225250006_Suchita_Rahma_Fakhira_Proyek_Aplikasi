@@ -1,0 +1,36 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F6F5FC; --surface: #FFFFFF; --surface-soft: #F1EFFB; --border: #E6E4F2;
+    --text: #1F2140; --text-muted: #6B6E85; --primary: #6C5CE7; --primary-soft: #EEEBFF;
+    --salah: #E5675C; --salah-soft: #FDECEA;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16152B; --surface: #22213B; --surface-soft: #2B2A47; --border: #38365A;
+      --text: #ECEBF7; --text-muted: #A6A5C2; --primary: #8F82F0; --primary-soft: #332F5C;
+      --salah: #F08C83; --salah-soft: #4A2B2E;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font-family: "Plus Jakarta Sans", system-ui, sans-serif; line-height: 1.5; }
+  .wadah { max-width: 1000px; margin: 0 auto; padding: 24px 16px 48px; }
+  .kartu { background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+           padding: 20px; box-shadow: 0 4px 16px rgba(108, 92, 231, .08); }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .muted { color: var(--text-muted); font-size: 14px; }
+  .tombol { display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            min-height: 48px; padding: 0 24px; border: 0; border-radius: 999px; background: var(--primary);
+            color: #fff; font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; }
+  .tombol.kedua { background: var(--primary-soft); color: var(--primary); }
+  label { display: block; font-weight: 600; margin: 16px 0 6px; font-size: 14px; }
+  input { width: 100%; min-height: 48px; padding: 0 14px; border-radius: 14px; border: 1px solid var(--border);
+          background: var(--surface); color: var(--text); font: inherit; }
+  input:focus { outline: 2px solid var(--primary); border-color: transparent; }
+  .galat { background: var(--salah-soft); color: var(--salah); padding: 10px 14px; border-radius: 12px;
+           margin-top: 16px; font-size: 14px; }
+</style>
