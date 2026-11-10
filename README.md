@@ -128,6 +128,4 @@ Setelah terpasang, materi dan latihan tetap bisa dipakai **tanpa internet**. Nil
 
 ## Privasi
 Aplikasi **terbuka untuk semua orang**: siswa cukup memasukkan **nama panggilan**, tanpa kode kelas, password, email, atau nomor HP. Yang dikirim ke server hanya nama panggilan dan hasil belajar. Rekap nilai hanya bisa dibuka guru/peneliti dengan kunci guru.
-=======
-# 2225250006_Suchita_Rahma_Fakhira_Proyek_Aplikasi
->>>>>>> c7ab88e5c6142b401e64398d7bc3c44b6b02eb09
+
